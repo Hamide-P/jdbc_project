@@ -18,3 +18,8 @@ select * from jobs;
 select job_id from jobs;
 --since primary key cannot be duplicate it gives the same result with distinct.
 select distinct job_id from jobs;
+
+SELECT DISTINCT FIRST_NAME FROM EMPLOYEES;
+-- different usages
+select distinct (first_name) from employees;
+

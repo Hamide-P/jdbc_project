@@ -81,7 +81,7 @@ select * from EMPLOYEES;
 
 select substr(FIRST_NAME,0,1)||'.'||substr(LAST_NAME,0,1)||'.' as initials from EMPLOYEES;
 
-select substr(FIRST_NAME,1,1)||'.'||substr(LAST_NAM  E,1,1)||'.' as initials from EMPLOYEES;
+select substr(FIRST_NAME,1,1)||'.'||substr(LAST_NAME,1,1)||'.' as initials from EMPLOYEES;
 
 select FIRST_NAME,substr(FIRST_NAME,-2,2) from EMPLOYEES;
 

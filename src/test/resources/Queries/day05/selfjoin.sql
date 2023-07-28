@@ -1,0 +1,16 @@
+select  employee_id, first_name, last_name, manager_id from employees;
+
+--Who is the Neena manager ?
+-- Only taking the matching records not null values
+SELECT WORKERS.EMPLOYEE_ID, WORKERS.FIRST_NAME, WORKERS.LAST_NAME,WORKERS.MANAGER_ID,
+MANAGERS.EMPLOYEE_ID, MANAGERS.FIRST_NAME, MANAGERS.LAST_NAME
+FROM EMPLOYEES WORKERS JOIN EMPLOYEES MANAGERS
+ON WORKERS.MANAGER_ID = MANAGERS.EMPLOYEE_ID;
+
+--how can I see all employees even if they dont have any manager ?
+--taking the all matching records with null values
+SELECT WORKERS.EMPLOYEE_ID, WORKERS.FIRST_NAME, WORKERS.LAST_NAME,WORKERS.MANAGER_ID,
+MANAGERS.EMPLOYEE_ID, MANAGERS.FIRST_NAME, MANAGERS.LAST_NAME
+FROM EMPLOYEES WORKERS LEFT JOIN EMPLOYEES MANAGERS
+ON WORKERS.MANAGER_ID = MANAGERS.EMPLOYEE_ID
+ORDER BY 1; -- First column information in ascending order

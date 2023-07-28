@@ -50,8 +50,8 @@ SELECT AVG(SALARY)
 FROM EMPLOYEES;
 
 --10. Count the total numbers of the departments in departs table
-SELECT COUNT(DISTINCT DEPARTMENT_ID)
-FROM EMPLOYEES;
+SELECT COUNT(*)
+FROM DEPARTMENTS;
 
 --11. Sort the start_date in ascending order in job_history's table
 SELECT START_DATE
@@ -64,5 +64,51 @@ FROM JOB_HISTORY
 ORDER BY START_DATE DESC ;
 
 --13. Display all records whose last name contains 2 lowercase 'a's
+SELECT * FROM EMPLOYEES
+WHERE LAST_NAME LIKE '%a%a';
 
 --14. Display all the employees whose first name starts with ‘A'
+SELECT * FROM EMPLOYEES
+WHERE FIRST_NAME LIKE 'A%';
+
+--15. Display all the employees whose job_ID contains ‘IT'
+SELECT * FROM EMPLOYEES
+WHERE JOB_ID LIKE '%IT%';
+
+
+--16. Display all unique job_id that end with CLERK in employee table
+SELECT DISTINCT JOB_ID
+FROM EMPLOYEES
+WHERE JOB_ID LIKE '%CLERK';
+
+--17.Display all employees first name starts with A and have exactly 4 characters
+SELECT * FROM EMPLOYEES
+WHERE FIRST_NAME LIKE 'A___';
+
+--18. Display all the employees whose department id in 50, 80, 100
+SELECT * FROM EMPLOYEES
+WHERE FIRST_NAME LIKE 'A___';
+
+--19. Display all employees who does not work in any one of these department id —
+-- > 90, 60, 100, 130, 120
+SELECT * FROM EMPLOYEES
+WHERE DEPARTMENT_ID  NOT IN (90, 60, 100, 130, 120);
+
+
+--20. divide employees into groups by using their job id
+SELECT JOB_ID
+FROM EMPLOYEES
+GROUP BY JOB_ID;
+-- 1 display the maximum salaries in each groups
+
+-- 2 display the minimum salaries in each groups
+-- 3 display the average salary of each group
+-- 4 how many employees are there in each group that have minimum
+--salary of 5000 ?
+-- 5 display the total budgets of each groups
+
+
+--21. display all job_id and average salary who work as any of these jobs
+--IT_PROG,SA_REP, FI_ACCOUNT, AD_VP
+--22.Display max salary for each department
+--23. Display total salary for each department except department_id 50, and where
